@@ -1,2 +1,3 @@
 # chiron
-Drupal module for Radio
+
+Drupal Omega 4 theme for Radio
