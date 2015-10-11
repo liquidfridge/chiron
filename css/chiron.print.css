@@ -1,0 +1,67 @@
+/*
+ * A partial implementation of the Ruby list functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
+ */
+/*
+ * A partial implementation of the Ruby constants functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/constants.rb
+ */
+/*
+ * A partial implementation of the Ruby display functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/core/lib/compass/core/sass_extensions/functions/display.rb
+ */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF; }
+
+th {
+  text-align: left;
+  /* LTR */
+  color: #222;
+  border-bottom: 1px solid #c8c8c8; }
+
+tr.odd {
+  background-color: #e9e9e9; }
+
+tr.even {
+  background-color: #FFF; }
+
+td {
+  padding: 0.5em 0.5em; }
+
+picture {
+  display: inline-block;
+  -webkit-box-sizing: padding-box;
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
+  height: auto;
+  max-width: 100%;
+  vertical-align: top; }
+
+img,
+a img,
+*:link img,
+*:visited img {
+  border: none;
+  -webkit-box-sizing: padding-box;
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic; }
+
+.l-header {
+  padding: 0.5em 1em; }
+  .l-header .l-site-name {
+    font-weight: bold; }
+
+.l-main {
+  padding: 0.5em 1em; }
+
+.l-footer {
+  border-top: 1px solid #c8c8c8;
+  padding: 0.5em 1em; }
+
+/*# sourceMappingURL=chiron.print.css.map */

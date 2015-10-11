@@ -1,0 +1,155 @@
+/**
+ * Clearfix: contain floats
+ * https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ * `contenteditable` attribute is included anywhere else in the document.
+ * Otherwise it causes space to appear at the top and bottom of elements
+ * that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ * `:before` to contain the top-margins of child elements.
+ */
+@mixin clearfix {
+  &:before, &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin user-drag($drag){
+  -webkit-user-drag: $drag;
+  -moz-user-drag: $drag;
+  -ms-user-drag: $drag;
+  -o-user-drag: $drag;
+  user-drag: $drag;
+}
+
+@mixin top($value){
+  top: $value;
+  top: ($value / $base-font-size) * 1rem;
+}
+
+@mixin bottom($value){
+  bottom: $value;
+  bottom: ($value / $base-font-size) * 1rem;
+}
+
+@mixin left($value){
+  left: $value;
+  left: ($value / $base-font-size) * 1rem;
+}
+
+@mixin right($value){
+  right: $value;
+  right: ($value / $base-font-size) * 1rem;
+}
+
+@mixin margin($top, $right){
+  @include margin-top($top);
+  @include margin-right($right);
+  @include margin-bottom($top);
+  @include margin-left($right);
+}
+
+@mixin margin-top($value){
+  margin-top: $value;
+  margin-top: ($value / $base-font-size) * 1rem;
+}
+
+@mixin margin-bottom($value){
+  margin-bottom: $value;
+  margin-bottom: ($value / $base-font-size) * 1rem;
+}
+
+@mixin margin-left($value){
+  margin-left: $value;
+  margin-left: ($value / $base-font-size) * 1rem;
+}
+
+@mixin margin-right($value){
+  margin-right: $value;
+  margin-right: ($value / $base-font-size) * 1rem;
+}
+
+@mixin padding($top, $right){
+  @include padding-top($top);
+  @include padding-right($right);
+  @include padding-bottom($top);
+  @include padding-left($right);
+}
+
+@mixin padding-top($value){
+  padding-top: $value;
+  padding-top: ($value / $base-font-size) * 1rem;
+}
+
+@mixin padding-bottom($value){
+  padding-bottom: $value;
+  padding-bottom: ($value / $base-font-size) * 1rem;
+}
+
+@mixin padding-left($value){
+  padding-left: $value;
+  padding-left: ($value / $base-font-size) * 1rem;
+}
+
+@mixin padding-right($value){
+  padding-right: $value;
+  padding-right: ($value / $base-font-size) * 1rem;
+}
+
+@mixin height($value){
+  height: $value;
+  height: ($value / $base-font-size) * 1rem;
+}
+
+@mixin width($value){
+  width: $value;
+  width: ($value / $base-font-size) * 1rem;
+}
+
+@mixin max-height($value){
+  max-height: $value;
+  max-height: ($value / $base-font-size) * 1rem;
+}
+
+@mixin max-width($value){
+  max-width: $value;
+  max-width: ($value / $base-font-size) * 1rem;
+}
+
+@mixin min-height($value){
+  min-height: $value;
+  min-height: ($value / $base-font-size) * 1rem;
+}
+
+@mixin min-width($value){
+  min-width: $value;
+  min-width: ($value / $base-font-size) * 1rem;
+}
+
+@mixin border-width($value){
+  border-width: $value;
+  border-width: ($value / $base-font-size) * 1rem;
+}
+
+// @see http://indiegamr.com/ios6-html-hardware-acceleration-changes-and-how-to-fix-them/
+// @see http://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform
+@mixin gpu(){
+  @include backface-visibility(hidden);
+  @include perspective(1000);
+  @include transform-style(preserve-3d);
+  @include translate3d(0,0,0);
+}
+
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}

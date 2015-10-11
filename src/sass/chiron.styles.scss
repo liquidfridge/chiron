@@ -1,0 +1,104 @@
+@import "bourbon";
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "spinners";
+
+@import "variables";
+@import "abstractions";
+@import "base";
+@import "components";
+
+@media (max-width: 1024px) {
+  body.admin-menu.adminimal-menu:before {
+    display: none;
+  }
+}
+
+body.adminimal-menu div#admin-menu * {
+  font-family: "Segoe UI", "Helvetica", sans-serif !important;
+}
+
+.slicknav_btn {
+  @include font-size(14px);
+  background-position: 0 50%;
+  margin-left: $horz-spacing-unit * 0.5;
+  padding: ($vert-spacing-unit) ($horz-spacing-unit);
+
+  .slicknav_menutxt {
+    padding-left: $horz-spacing-unit * 0.75;
+  }
+}
+
+.mean-container {
+  .mean-bar {
+    background: $navy;
+    padding: 0;
+    min-height: 42px;
+  }
+
+  a.meanmenu-reveal {
+    font-size: 16px !important;
+    padding: 14px;
+    width: 44px;
+    height: 44px;
+    @include box-sizing('border-box');
+
+    span {
+      height: 2px;
+      margin-top: 4px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .mean-nav {
+    background: $navy;
+    margin-top: 44px;
+
+    ul {
+      @include font-size(14px);
+      margin: 0;
+
+      li {
+        margin: 0;
+
+        a {
+          border-top-color: lighten($navy, 20%);
+          padding-top: ($vert-spacing-unit * 0.85);
+          padding-bottom: ($vert-spacing-unit * 0.85);
+          text-transform: none;
+
+          &:hover {
+            background: lighten($navy, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.l-page {
+  clear: left; /* Clear MeanMenu float */
+}
+
+/*----------------------------------------------------------------------
+ERROR PAGES
+----------------------------------------------------------------------*/
+
+.maintenance-page,
+.error-page {
+  padding: 10%;
+  background: $white;
+
+  .l-main {
+    background: $white;
+
+    .l-content {
+      width: 100%;
+      float: none;
+    }
+  }
+}

@@ -1,0 +1,230 @@
+/*
+ * A partial implementation of the Ruby list functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
+ */
+/*
+ * A partial implementation of the Ruby constants functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/constants.rb
+ */
+/*
+ * A partial implementation of the Ruby display functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/core/lib/compass/core/sass_extensions/functions/display.rb
+ */
+/*
+================================================================================
+SPINNERS
+================================================================================
+A Sass mixin to generate a pure CSS3 loading/busy indicator.
+https://github.com/franzheidl/spinners
+Franz Heidl 2014
+MIT License
+--------------------------------------------------------------------------------
+USAGE
+
+Default:
+
+.my-spinner {
+ @include spinner();
+}
+
+
+Custom:
+
+.my-spinner {
+ @include spinner(1.25em, 3px solid #555, .7s, background rgba(0, 0, 0, .2);
+}
+
+All arguments are optional.
+
+Acceppts any valid CSS dimensional declaration, e.g px, em, rem as an argument for size.
+
+Use either shorthand border declarations or individual 'border-[property] [value]' (no colon!) pairs for the style.
+
+Pass any number of seconds referring to the duration of one full rotation for animation speed.
+
+--------------------------------------------------------------------------------
+*/
+@-webkit-keyframes spinner-animation {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@-moz-keyframes spinner-animation {
+  0% {
+    -moz-transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@-o-keyframes spinner-animation {
+  0% {
+    -o-transform: rotate(0deg); }
+  100% {
+    -o-transform: rotate(100deg); } }
+
+@keyframes spinner-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+/**
+ * Clearfix: contain floats
+ * https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ * `contenteditable` attribute is included anywhere else in the document.
+ * Otherwise it causes space to appear at the top and bottom of elements
+ * that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ * `:before` to contain the top-margins of child elements.
+ */
+.l-region--notes-book-title h1,
+.l-region--notes-book-title h2,
+.l-region--notes-book-body h1,
+.l-region--notes-book-body h2 {
+  border-bottom: 1px solid #c8c8c8; }
+
+.l-region--notes-book-title h1,
+.l-region--notes-book-title h2,
+.l-region--notes-book-title h3,
+.l-region--notes-book-title h4,
+.l-region--notes-book-title h5,
+.l-region--notes-book-title h6 {
+  margin-top: 0; }
+
+.l-region--notes-book-body a {
+  text-decoration: underline; }
+  .l-region--notes-book-body a:visited {
+    text-decoration: underline; }
+  .l-region--notes-book-body a:active, .l-region--notes-book-body a:focus, .l-region--notes-book-body a:hover {
+    text-decoration: none; }
+  .l-region--notes-book-body a:not(.see-footnote) {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -ms-word-break: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto; }
+
+.l-region--notes-book-body a.see-footnote,
+.l-region--notes-book-body a.footnote-label {
+  text-decoration: none; }
+  .l-region--notes-book-body a.see-footnote:visited,
+  .l-region--notes-book-body a.footnote-label:visited {
+    text-decoration: none; }
+  .l-region--notes-book-body a.see-footnote:active,
+  .l-region--notes-book-body a.see-footnote:focus,
+  .l-region--notes-book-body a.see-footnote:hover,
+  .l-region--notes-book-body a.footnote-label:active, .l-region--notes-book-body a.footnote-label:focus, .l-region--notes-book-body a.footnote-label:hover {
+    text-decoration: underline; }
+
+.l-region--notes-book-body figure {
+  text-align: center; }
+  .l-region--notes-book-body figure figcaption {
+    font-size: 13px;
+    font-size: 0.92857rem;
+    padding: 0.75em 0 0;
+    text-align: center; }
+
+.l-region--notes-book-body picture {
+  width: 100%;
+  height: auto; }
+  .l-region--notes-book-body picture img {
+    width: 100%;
+    max-width: none; }
+
+.l-region--notes-book-updated {
+  margin-top: 3.14286em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.57143em; }
+  .l-region--notes-book-updated .pane-node-updated {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+    .l-region--notes-book-updated .pane-node-updated p {
+      font-size: 12px;
+      font-size: 0.85714rem;
+      margin-top: 1.57143em;
+      padding-top: 0em;
+      padding-bottom: 0em;
+      margin-bottom: 1.57143em;
+      color: #7a7a7a; }
+
+.l-region--notes-book-toc {
+  margin: 0 0 2.5em 2em;
+  padding: 0.75em 0.75em;
+  float: right;
+  background: #f4f4f4;
+  border: 1px solid #c8c8c8; }
+  .l-region--notes-book-toc .menu {
+    font-size: 12px;
+    font-size: 0.85714rem;
+    list-style: disc;
+    margin: 0;
+    padding: 0; }
+    .l-region--notes-book-toc .menu li {
+      margin-top: 0.15714em;
+      padding-top: 0em;
+      padding-bottom: 0em;
+      margin-bottom: 0.15714em;
+      list-style: disc;
+      margin-left: 1.5em;
+      padding: 0; }
+    .l-region--notes-book-toc .menu a {
+      color: #1b8898; }
+      .l-region--notes-book-toc .menu a:visited {
+        color: #1b8898; }
+      .l-region--notes-book-toc .menu a:focus {
+        color: #1b8898; }
+      .l-region--notes-book-toc .menu a:hover {
+        color: #1b8898; }
+      .l-region--notes-book-toc .menu a:active {
+        color: #1b8898; }
+      .l-region--notes-book-toc .menu a.active {
+        color: #222;
+        font-weight: bold; }
+        .l-region--notes-book-toc .menu a.active:visited {
+          color: #222; }
+        .l-region--notes-book-toc .menu a.active:focus {
+          color: #222; }
+        .l-region--notes-book-toc .menu a.active:hover {
+          color: #222; }
+        .l-region--notes-book-toc .menu a.active:active {
+          color: #222; }
+
+.l-region--notes-book-nav {
+  clear: both; }
+  .l-region--notes-book-nav .book-navigation__links {
+    margin-top: 2.35714em;
+    padding-top: 0.62857em;
+    padding-bottom: 0.62857em;
+    margin-bottom: 1.57143em;
+    border: 1px solid #c8c8c8;
+    border-width: 1px 0; }
+    .l-region--notes-book-nav .book-navigation__links:before, .l-region--notes-book-nav .book-navigation__links:after {
+      content: " ";
+      /* 1 */
+      display: table;
+      /* 2 */ }
+    .l-region--notes-book-nav .book-navigation__links:after {
+      clear: both; }
+
+/*----------------------------------------------------------------------
+>= 1008
+----------------------------------------------------------------------*/
+@media (min-width: 63em) {
+  .l-region--notes-book-toc {
+    display: none; }
+  .l-region--notes-book-nav {
+    display: none; } }
+
+/*# sourceMappingURL=front.layout.css.map */

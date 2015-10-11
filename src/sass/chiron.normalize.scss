@@ -1,0 +1,28 @@
+// Import the legacy variables (relevant for controlling compass-normalize).
+@import "variables";
+
+// Generate normalize.css.
+@import "normalize";
+
+// https://github.com/at-import/toolkit/blob/2.x.x/stylesheets/toolkit/_kickstart.scss
+html {
+	@if mixin-exists('box-sizing') {
+		@include box-sizing('border-box');
+	}
+	@else {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+embed,
+img,
+object,
+video {
+	max-width: 100%;
+	height: auto;
+}

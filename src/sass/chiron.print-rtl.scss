@@ -1,0 +1,12 @@
+@import "bourbon";
+@import "compass";
+
+@import "variables";
+
+body {
+  direction: rtl;
+}
+
+th {
+  text-align: right;
+}

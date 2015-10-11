@@ -1,0 +1,61 @@
+/**
+ * @file
+ * Media elements.
+ */
+
+embed,
+object {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+figure {
+  @include rhythm(0, 0, 0, 1.25);
+  margin-left: 0;
+  margin-right: 0;
+
+  figcaption {
+    padding: ($vert-spacing-unit * 0.5) 0 0;
+  }
+}
+
+iframe {
+  width: 100%;
+}
+
+picture {
+  display: inline-block;
+  @include box-sizing(padding-box);
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+img,
+a img,
+*:link img,
+*:visited img {
+  border: none;
+  @include box-sizing(padding-box);
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
+}
+
+.fluid-width-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+.fluid-width-video-wrapper iframe,
+.fluid-width-video-wrapper object,
+.fluid-width-video-wrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

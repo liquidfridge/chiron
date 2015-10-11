@@ -1,0 +1,46 @@
+@import "bourbon";
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "spinners";
+
+@import "variables";
+@import "normalize";
+@import "abstractions";
+@import "base";
+
+body {
+  background: $white;
+  color: $black;
+  font-family: sans-serif;
+  margin: 1.5em;
+}
+
+a {
+  text-decoration: underline;
+
+  &:visited {
+    text-decoration: underline;
+  }
+
+  &:active, &:focus, &:hover {
+    text-decoration: none;
+  }
+}
+
+h1,
+h2 {
+  border-bottom: 1px solid $light-grey;
+}
+
+figure {
+  padding: ($vert-spacing-unit * 0.75) ($horz-spacing-unit * 0.75);
+  border: 1px dashed $light-grey;
+  text-align: center;
+
+  figcaption {
+    @include font-size(13px);
+    padding: ($vert-spacing-unit * 0.75) 0 0;
+    text-align: center;
+  }
+}

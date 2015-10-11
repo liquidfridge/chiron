@@ -1,0 +1,160 @@
+/**
+ * @file
+ * Comments.
+ */
+
+.comments {
+  .indented {
+    margin-left: $horz-spacing-unit * 3;
+  }
+}
+
+.comments__title,
+.comments__form-title {
+  @include font-size(16px);
+  @include rhythm(2.75, 0, 0.2, 1);
+  border-bottom: 1px solid $light-grey;
+  font-family: $sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.comment {
+  margin: ($vert-spacing-unit) 0;
+  padding: 0;
+}
+
+.comment--new {
+  background: $light-lemon;
+  padding: ($vert-spacing-unit) ($horz-spacing-unit);
+
+  .new {
+    @include border-radius($border-radius);
+    @include font-size(11px);
+    display: inline-block;
+    padding: ($vert-spacing-unit * 0.1) ($horz-spacing-unit * 0.5);
+    margin: 0 0 $vert-spacing-unit;
+    background: $red;
+    color: $white;
+  }
+}
+
+.comment__info {
+  font-family: $monospace;
+  @include font-size(12px);
+  @include rhythm(0, 0, 0, 1);
+  color: $grey;
+
+  p {
+    @include font-size(12px);
+    @include rhythm(0, 0, 0, 0);
+  }
+
+  a.username,
+  .permalink {
+    text-decoration: none;
+
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:active, &:focus, &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .username {
+    font-family: $sans-serif;
+    @include font-size(14px);
+    color: $black;
+    font-weight: bold;
+  }
+
+  a.username {
+    @include link-colors($black, $dark-sky, $dark-sky, $black, $dark-sky);
+  }
+
+  .permalink {
+    margin-left: $horz-spacing-unit * 0.5;
+  }
+
+  .time {
+    margin-left: $horz-spacing-unit * 0.5;
+  }
+}
+
+.comment__content {
+  a {
+    text-decoration: underline;
+
+    &:visited {
+      text-decoration: underline;
+    }
+
+    &:active, &:focus, &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p,
+  ol,
+  ul {
+    @include font-size(14px);
+  }
+}
+
+.comment__submitted {
+  display: inline;
+}
+
+.talk-page > .links a,
+.comment__links a,
+.ckeditor_links {
+  @include button-secondary-small-outline;
+}
+
+.ckeditor_links {
+  margin: ($vert-spacing-unit * 1.5) 0 0;
+}
+
+.comment__links {
+  li {
+    @include rhythm(0, 0, 0, 0);
+  }
+}
+
+.form-item-comment-body-und-0-value {
+  label {
+    @include element-invisible;
+  }
+}
+
+.comment-confirm-delete {
+  .form-actions {
+    button,
+    .button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      margin-right: 1em;
+    }
+  }
+}
+
+/*----------------------------------------------------------------------
+>= 752
+----------------------------------------------------------------------*/
+
+@include breakpoint($medium) {
+
+  .comments {
+    .indented {
+      margin-left: $horz-spacing-unit * 4;
+    }
+  }
+
+  .comment {
+    margin: ($vert-spacing-unit * 2.5) 0;
+  }
+
+}

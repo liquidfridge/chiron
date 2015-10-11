@@ -1,0 +1,67 @@
+@import "bourbon";
+@import "compass";
+
+@import "variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+th {
+  text-align: left; /* LTR */
+  color: $black;
+  border-bottom: 1px solid $light-grey;
+}
+
+tr {
+  &.odd {
+    background-color: $lighter-grey;
+  }
+
+  &.even {
+    background-color: $white;
+  }
+}
+
+td {
+  padding: ($vert-spacing-unit * 0.5) ($horz-spacing-unit * 0.5);
+}
+
+picture {
+  display: inline-block;
+  @include box-sizing(padding-box);
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+img,
+a img,
+*:link img,
+*:visited img {
+  border: none;
+  @include box-sizing(padding-box);
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
+}
+
+.l-header {
+  padding: ($vert-spacing-unit * 0.5) ($horz-spacing-unit);
+
+  .l-site-name {
+    font-weight: bold;
+  }
+}
+
+.l-main {
+  padding: ($vert-spacing-unit * 0.5) ($horz-spacing-unit);
+}
+
+.l-footer {
+  border-top: 1px solid $light-grey;
+  padding: ($vert-spacing-unit * 0.5) ($horz-spacing-unit);
+}

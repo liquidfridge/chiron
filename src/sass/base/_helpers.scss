@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Helper classes.
+ */
+
+.clearfix {
+	@include clearfix;
+}
+
+.column-break-before  {
+	@include column-break-before(always);
+}

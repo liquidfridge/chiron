@@ -1,0 +1,47 @@
+/**
+ * @file
+ * Styling for the filter module.
+ */
+
+.filter-wrapper {
+  @include border-radius($border-radius);
+  background: $lightest-grey;
+  border: none;
+  margin: ($vert-spacing-unit) 0;
+  padding: 0;
+
+  .form-item {
+    @include font-size(13px);
+    float: none;
+    padding: ($vert-spacing-unit * 1.5) ($horz-spacing-unit * 1.5) 0;
+
+    label {
+      margin-right: $horz-spacing-unit;
+    }
+  }
+}
+
+.filter-help {
+  @include element-hidden;
+  padding: 0;
+
+  p {
+    @include font-size(13px);
+    margin: 0;
+  }
+
+  a {
+    background: none;
+    padding: 0;
+  }
+}
+
+.filter-guidelines {
+  padding: 0;
+}
+
+.tips {
+  @include font-size(12px);
+  margin: ($vert-spacing-unit * 1.5) ($horz-spacing-unit * 1.5);
+  padding-left: 2em;
+}

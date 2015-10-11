@@ -1,0 +1,89 @@
+/**
+ * @file
+ * Form elements.
+ */
+
+.touchevents {
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="text"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"] {
+  @include font-size(14px);
+  background: $white;
+  border: 2px solid $light-grey;
+  padding: ($vert-spacing-unit * 0.5) ($horz-spacing-unit * 0.5);
+
+  &.error {
+    border-color: $red;
+  }
+
+  &:focus {
+    border-color: $dark-sky;
+    outline: none;
+  }
+}
+
+select {
+  @include font-size(14px);
+}
+
+textarea {
+  @include font-size(14px);
+  background: $white;
+  border: 2px solid $light-grey;
+  padding: ($vert-spacing-unit * 0.75) ($horz-spacing-unit * 0.75);
+
+  &.error {
+    border-color: $red;
+  }
+
+  &:focus {
+    border-color: $dark-sky;
+    outline: none;
+  }
+}
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @include button-primary-medium;
+}
+
+.form-item label:not(.option),
+.form-actions label:not(.option) {
+  @include font-size(13px);
+  @include rhythm(0, 0, 0, 0.25);
+  font-family: $sans-serif;
+  font-weight: bold;
+}
+
+input[type="checkbox"] + label.option,
+input[type="radio"] + label.option {
+  padding-left: ($horz-spacing-unit * 0.5);
+}
+
+.form-item {
+  @include rhythm(0, 0, 0, 1);
+}
+
+.form-actions {
+  @include rhythm(1.5, 0, 0, 1);
+}
+
+.form-item .description,
+.form-actions .description {
+  @include font-size(13px);
+  @include rhythm(0.25, 0, 0, 0.25);
+}

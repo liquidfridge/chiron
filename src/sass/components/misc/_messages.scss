@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Messages.
+ */
+
+.messages {
+  @include font-size(13px);
+  font-family: $sans-serif;
+  font-weight: bold;
+  padding: ($vert-spacing-unit) ($horz-spacing-unit);
+  margin: 0 auto ($vert-spacing-unit * 3);
+
+  a,
+  a:visited {
+    color: inherit;
+  }
+}
+
+.messages.status,
+.messages--status {
+  color: $blue;
+  background: transparent;
+  border: 1px dashed lighten($blue, 20%);
+}
+
+.messages.warning,
+.messages--warning {
+  color: $orange;
+  background: transparent;
+  border: 1px dashed lighten($orange, 20%);
+}
+
+.messages.error,
+.messages--error {
+  color: $red;
+  background: transparent;
+  border: 1px dashed lighten($red, 20%);
+}
+
+.messages-inline {
+  @include font-size(13px);
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+  padding: 0;
+
+  &.status,
+  &.warning,
+  &.error {
+    border: none;
+  }
+
+  .icon {
+    @include font-size(16px);
+    margin-top: 0.125em;
+  }
+}

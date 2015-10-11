@@ -1,0 +1,150 @@
+@import "bourbon";
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "spinners";
+
+@import "variables";
+@import "abstractions";
+
+.l-region--notes-book-title,
+.l-region--notes-book-body {
+  h1,
+  h2 {
+    border-bottom: 1px solid $light-grey;
+  }
+}
+
+.l-region--notes-book-title {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+  }
+}
+
+.l-region--notes-book-body {
+  a {
+    text-decoration: underline;
+
+    &:visited {
+      text-decoration: underline;
+    }
+
+    &:active, &:focus, &:hover {
+      text-decoration: none;
+    }
+
+    &:not(.see-footnote) {
+      @include word-wrap;
+    }
+  }
+
+  a.see-footnote,
+  a.footnote-label {
+    text-decoration: none;
+
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:active, &:focus, &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  figure {
+    text-align: center;
+
+    figcaption {
+      @include font-size(13px);
+      padding: ($vert-spacing-unit * 0.75) 0 0;
+      text-align: center;
+    }
+  }
+
+  picture {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
+.l-region--notes-book-updated {
+  @include rhythm(2, 0, 0, 1);
+
+  .pane-node-updated {
+    font-family: $monospace;
+
+    p {
+      @include font-size(12px);
+      @include rhythm(1, 0, 0, 1);
+      color: $grey;
+    }
+  }
+}
+
+.l-region--notes-book-toc {
+  margin: 0 0 ($vert-spacing-unit * 2.5) ($horz-spacing-unit * 2);
+  padding: ($vert-spacing-unit * 0.75) ($horz-spacing-unit * 0.75);
+  float: right;
+  background: $lightest-grey;
+  border: 1px solid $light-grey;
+
+  .menu {
+    @include font-size(12px);
+    list-style: disc;
+    margin: 0;
+    padding: 0;
+
+    li {
+      @include rhythm(0.1, 0, 0, 0.1);
+      list-style: disc;
+      margin-left: 1.5em;
+      padding: 0;
+    }
+
+    a {
+      @include link-colors($dark-sky, $dark-sky, $dark-sky, $dark-sky, $dark-sky);
+
+      &.active {
+        @include link-colors($black, $black, $black, $black, $black);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.l-region--notes-book-nav {
+  clear: both;
+
+  .book-navigation__links {
+    @include clearfix;
+    @include rhythm(1.5, 0.4, 0.4, 1);
+    border: 1px solid $light-grey;
+    border-width: 1px 0;
+  }
+}
+
+/*----------------------------------------------------------------------
+>= 1008
+----------------------------------------------------------------------*/
+
+@include breakpoint($large) {
+
+  .l-region--notes-book-toc {
+    @include element-hidden;
+  }
+
+  .l-region--notes-book-nav {
+    @include element-hidden;
+  }
+
+}

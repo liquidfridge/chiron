@@ -1,0 +1,24 @@
+{
+  "name": "chiron",
+  "version": "1.0.0",
+  "dependencies": {
+    "bourbon": "~4.2.4",
+    "compass-breakpoint": "breakpoint-sass#~2.6.1",
+    "compass-mixins": "~1.0.2",
+    "fastclick": "~1.0.6",
+    "html5shiv": "fubhy/html5shiv",
+    "lodash": "~3.10.1",
+    "matchmedia": "fubhy/matchmedia",
+    "normalize-scss": "~3.0.3",
+    "pie": "fubhy/pie",
+    "q": "https://github.com/netbek/q.git#v1.4.1-min",
+    "respond": "fubhy/respond",
+    "rh-icon": "https://github.com/netbek/rh-icon.git#master",
+    "selectivizr": "fubhy/selectivizr",
+    "singularity": "~1.6.2",
+    "spinners": "~1.2.2"
+  },
+  "devDependencies": {
+    "prefixfree": "https://github.com/LeaVerou/prefixfree.git#gh-pages"
+  }
+}
